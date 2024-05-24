@@ -1,0 +1,41 @@
+/* static/css/styles.css */
+
+/* Estilo para el fondo de la página */
+body {
+    background-image: url('images/fondoEtiquetas.png'); /* Ruta relativa a la imagen de fondo */
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir toda la página */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* La imagen de fondo se mantiene fija al hacer scroll */
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    margin: 0; /* Elimina el margen predeterminado */
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo para el recuadro blanco */
+.wrapper {
+    background-color: white; /* Fondo blanco para el recuadro */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+    max-width: 800px; /* Ancho máximo del recuadro */
+    width: 100%; /* Ancho completo del recuadro */
+    box-sizing: border-box; /* Incluye padding y border en el tamaño total */
+    text-align: center;
+}
+
+/* Estilo para el container */
+.container {
+    background-color: white; /* Fondo blanco para el container */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-sizing: border-box; /* Incluye padding y border en el tamaño total */
+}
+
+/* Estilo para los encabezados */
+h1 {
+    color: #000000;
+    text-align: center; /* Centra el texto de los encabezados */
+}
