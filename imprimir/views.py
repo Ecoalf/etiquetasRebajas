@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_protect
+from django.middleware.csrf import get_token
 import pandas as pd
 import zebra
 from . forms import formulario
@@ -10,6 +11,7 @@ from . forms import formulario
 def Formulario(request):
     if request.method == 'POST':
         form = formulario(request.POST)
+        print("CSRF Token:", get_token(request)) 
         if form.is_valid():
             barcode = form.cleaned_data['barcode']
             number = form.cleaned_data['number']
