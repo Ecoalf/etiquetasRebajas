@@ -43,7 +43,7 @@ def Formulario(request):
                 z = zebra.Zebra()
                 try:
                     z.setqueue('ZDesigner ZD220-203dpi ZPL')
-                except FileNotFoundError as e:
+                except FileNotFoundError:
                     # Manejar la ausencia de `lpstat` o `lpr` adecuadamente
                     return render(request, 'formulario.html', {'form': form})
             
