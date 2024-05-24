@@ -44,10 +44,9 @@ def Formulario(request):
                 try:
                     impresoras = z.getqueues()
                     z.setqueue(impresoras[0])
-                except FileNotFoundError:
-                    # Maneja la ausencia de `lpstat` adecuadamente
-                    impresoras = ['Default Printer']  # Usa un valor por defecto o maneja el error de otra manera
-                    z.setqueue(impresoras[0])
+                except FileNotFoundError as e:
+                    # Manejar la ausencia de `lpstat` o `lpr` adecuadamente
+                    return render(request, 'error.html', {'error': str(e)})
             
                 etiqueta = f"""
                 ^XA
