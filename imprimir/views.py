@@ -42,7 +42,7 @@ def Formulario(request):
                 # Create label
                 z = zebra.Zebra()
                 try:
-                    z.setqueue('ZDesigner ZD220-203dpi ZPL')
+                    z.setqueue('ECOALF')
                 except FileNotFoundError:
                     # Manejar la ausencia de `lpstat` o `lpr` adecuadamente
                     return render(request, 'formulario.html', {'form': form})
