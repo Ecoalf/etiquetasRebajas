@@ -19,7 +19,7 @@ def Formulario(request):
             barcode = int(barcode)
             
             # Read excel file
-            excel_path = 'excel/Etiquetas.xlsx'
+            excel_path = 'https://ecolabels.blob.core.windows.net/labels/Etiquetas.xlsx'
             # df = pd.read_excel("\\\\servidor\\ECOALF\\etiquetasECI\\Etiquetas.xlsx")
             df = pd.read_excel(excel_path)
             
