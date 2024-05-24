@@ -42,11 +42,10 @@ def Formulario(request):
                 # Create label
                 z = zebra.Zebra()
                 try:
-                    impresoras = z.getqueues()
-                    z.setqueue(impresoras[0])
+                    z.setqueue('ZDesigner ZD220-203dpi ZPL')
                 except FileNotFoundError as e:
                     # Manejar la ausencia de `lpstat` o `lpr` adecuadamente
-                    return render(request, 'error.html', {'error': str(e)})
+                    return render(request, 'formulario.html', {'form': form})
             
                 etiqueta = f"""
                 ^XA
