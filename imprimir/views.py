@@ -40,10 +40,14 @@ def Formulario(request):
                 rebaja = f"{rebaja:.2f}"
                 
                 # Create label
-                
                 z = zebra.Zebra()
-                impresoras = z.getqueues()
-                z.setqueue(impresoras[0])
+                try:
+                    impresoras = z.getqueues()
+                    z.setqueue(impresoras[0])
+                except FileNotFoundError:
+                    # Maneja la ausencia de `lpstat` adecuadamente
+                    impresoras = ['Default Printer']  # Usa un valor por defecto o maneja el error de otra manera
+                    z.setqueue(impresoras[0])
             
                 etiqueta = f"""
                 ^XA
